@@ -20,7 +20,7 @@
   word-break: break-word;
   word-wrap: break-word;
 
-  &[contenteditable="false"] {
+  &[contenteditable='false'] {
     opacity: 0.3;
     cursor: not-allowed;
   }
@@ -35,12 +35,12 @@
   }
 
   &:after {
-    content: "";
+    content: '';
     height: var(--editor-bottom);
     display: block;
   }
 
-  span[data-type="newline"] + span[data-type="text"]:empty {
+  span[data-type='newline'] + span[data-type='text']:empty {
     display: inherit;
   }
 

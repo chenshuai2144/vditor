@@ -1,12 +1,13 @@
-import {getEventName} from "../util/compatibility";
-import {MenuItem} from "./MenuItem";
+import { getEventName } from '../util/compatibility';
+import { MenuItem } from './MenuItem';
 
 export class Help extends MenuItem {
-    constructor(vditor: IVditor, menuItem: IMenuItem) {
-        super(vditor, menuItem);
-        this.element.children[0].addEventListener(getEventName(), (event) => {
-            event.preventDefault();
-            vditor.tip.show(`<div style="margin-bottom:14px;font-size: 14px;line-height: 22px;min-width:300px;max-width: 360px;display: flex;">
+  constructor(vditor: IVditor, menuItem: IMenuItem) {
+    super(vditor, menuItem);
+    this.element.children[0].addEventListener(getEventName(), (event) => {
+      event.preventDefault();
+      vditor.tip.show(
+        `<div style="margin-bottom:14px;font-size: 14px;line-height: 22px;min-width:300px;max-width: 360px;display: flex;">
 <div style="margin-top: 14px;flex: 1">
     <div>Markdown 使用指南</div>
     <ul style="list-style: none">
@@ -24,7 +25,9 @@ export class Help extends MenuItem {
         <li><a href="https://ld246.com/article/1549638745630" target="_blank">开发手册</a></li>
         <li><a href="https://ld246.com/guide/markdown" target="_blank">演示地址</a></li>
     </ul>
-</div></div>`, 0);
-        });
-    }
+</div></div>`,
+        0,
+      );
+    });
+  }
 }

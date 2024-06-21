@@ -1,13 +1,14 @@
-import {VDITOR_VERSION} from "../constants";
-import {getEventName} from "../util/compatibility";
-import {MenuItem} from "./MenuItem";
+import { VDITOR_VERSION } from '../constants';
+import { getEventName } from '../util/compatibility';
+import { MenuItem } from './MenuItem';
 
 export class Info extends MenuItem {
-    constructor(vditor: IVditor, menuItem: IMenuItem) {
-        super(vditor, menuItem);
-        this.element.children[0].addEventListener(getEventName(), (event) => {
-            event.preventDefault();
-            vditor.tip.show(`<div style="max-width: 520px; font-size: 14px;line-height: 22px;margin-bottom: 14px;">
+  constructor(vditor: IVditor, menuItem: IMenuItem) {
+    super(vditor, menuItem);
+    this.element.children[0].addEventListener(getEventName(), (event) => {
+      event.preventDefault();
+      vditor.tip.show(
+        `<div style="max-width: 520px; font-size: 14px;line-height: 22px;margin-bottom: 14px;">
 <p style="text-align: center;margin: 14px 0">
     <em>下一代的 Markdown 编辑器，为未来而构建</em>
 </p>
@@ -37,7 +38,9 @@ export class Info extends MenuItem {
         </li>
     </ul>
 </div>
-</div>`, 0);
-        });
-    }
+</div>`,
+        0,
+      );
+    });
+  }
 }

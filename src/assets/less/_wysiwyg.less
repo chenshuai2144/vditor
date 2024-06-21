@@ -12,7 +12,7 @@
     height: 100%;
     box-sizing: border-box;
 
-    &[contenteditable="false"] {
+    &[contenteditable='false'] {
       opacity: 0.3;
       cursor: not-allowed;
     }
@@ -28,7 +28,7 @@
     }
 
     &:after {
-      content: "";
+      content: '';
       height: var(--editor-bottom);
       display: block;
     }
@@ -46,7 +46,7 @@
     content: ' ';
   }
 
-  code[data-marker="`"] {
+  code[data-marker='`'] {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
@@ -81,8 +81,8 @@
   & > .vditor-reset > h5:before,
   & > .vditor-reset > h6:before,
   div.vditor-wysiwyg__block:before,
-  div[data-type="link-ref-defs-block"]:before,
-  div[data-type="footnotes-block"]:before,
+  div[data-type='link-ref-defs-block']:before,
+  div[data-type='footnotes-block']:before,
   .vditor-toc:before {
     float: left;
     padding-right: 4px;
@@ -113,28 +113,28 @@
     content: 'H6';
   }
 
-  div[data-type="link-ref-defs-block"]:before {
+  div[data-type='link-ref-defs-block']:before {
     content: '"A"';
   }
 
-  div[data-type="footnotes-block"]:before {
+  div[data-type='footnotes-block']:before {
     content: '^F';
   }
 
   div.vditor-wysiwyg__block:before {
-    content: "</>";
+    content: '</>';
   }
 
-  div.vditor-wysiwyg__block[data-type="yaml-front-matter"]:before {
-    content: "F";
+  div.vditor-wysiwyg__block[data-type='yaml-front-matter']:before {
+    content: 'F';
   }
 
-  div.vditor-wysiwyg__block[data-type="math-block"]:before {
-    content: "$$";
+  div.vditor-wysiwyg__block[data-type='math-block']:before {
+    content: '$$';
   }
 
   .vditor-toc:before {
-    content: "ToC";
+    content: 'ToC';
   }
 
   hr {
@@ -151,28 +151,28 @@
     cursor: pointer;
   }
 
-  span[data-type="backslash"] > span {
+  span[data-type='backslash'] > span {
     display: none;
     color: var(--second-color);
   }
 
-  span[data-type="link-ref"],
-  sup[data-type="footnotes-ref"] {
+  span[data-type='link-ref'],
+  sup[data-type='footnotes-ref'] {
     color: @blurColor;
   }
 
-  span[data-type="toc-h"] {
+  span[data-type='toc-h'] {
     color: @blurColor;
     text-decoration: underline;
   }
 
-  div[data-type="footnotes-block"] {
+  div[data-type='footnotes-block'] {
     border-top: 2px solid var(--heading-border-color);
     padding-top: 24px;
     margin-top: 24px;
   }
 
-  div[data-type="link-ref-defs-block"] {
+  div[data-type='link-ref-defs-block'] {
     color: var(--blockquote-color);
   }
 }
@@ -186,8 +186,8 @@
     h5:before,
     h6:before,
     div.vditor-wysiwyg__block:before,
-    div[data-type="link-ref-defs-block"]:before,
-    div[data-type="footnotes-block"]:before,
+    div[data-type='link-ref-defs-block']:before,
+    div[data-type='footnotes-block']:before,
     .vditor-toc:before {
       content: none;
     }

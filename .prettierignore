@@ -1,0 +1,14 @@
+**/*.svg
+.umi
+.umi-production
+**/dist
+**/lib
+**/es
+**\__snapshots__\**
+pnpm-lock.yaml
+server
+**/src/js/**
+*.png
+*.min.js
+*.gif
+*.min.css

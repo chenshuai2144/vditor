@@ -6,12 +6,12 @@
   width: 100%;
 
   &__node {
-    &[data-type="code-block"]:before,
-    &[data-type="code-block"]:after,
-    &[data-type="yaml-front-matter"]:before,
-    &[data-type="yaml-front-matter"]:after,
-    &[data-type="math-block"]:before,
-    &[data-type="math-block"]:after {
+    &[data-type='code-block']:before,
+    &[data-type='code-block']:after,
+    &[data-type='yaml-front-matter']:before,
+    &[data-type='yaml-front-matter']:after,
+    &[data-type='math-block']:before,
+    &[data-type='math-block']:after {
       content: ' ';
       color: var(--second-color);
     }
@@ -20,16 +20,16 @@
       padding: 0 !important;
     }
 
-    &:not(.vditor-ir__node--expand)[data-type="a"] {
+    &:not(.vditor-ir__node--expand)[data-type='a'] {
       cursor: pointer;
     }
 
-    &[data-type="link-ref"],
-    &[data-type="footnotes-ref"] {
+    &[data-type='link-ref'],
+    &[data-type='footnotes-ref'] {
       color: @blurColor;
     }
 
-    &[data-type="html-block"] {
+    &[data-type='html-block'] {
       margin-bottom: 1em;
     }
 
@@ -94,28 +94,28 @@
         }
       }
 
-      &[data-type="code-block"]:before,
-      &[data-type="code-block"]:after {
+      &[data-type='code-block']:before,
+      &[data-type='code-block']:after {
         content: '```';
       }
 
-      &[data-type="yaml-front-matter"]:before,
-      &[data-type="yaml-front-matter"]:after {
+      &[data-type='yaml-front-matter']:before,
+      &[data-type='yaml-front-matter']:after {
         content: '---';
       }
 
-      &[data-type="math-block"]:before,
-      &[data-type="math-block"]:after {
+      &[data-type='math-block']:before,
+      &[data-type='math-block']:after {
         content: '$$';
       }
     }
 
-    span[data-type="code-block-open-marker"],
-    span[data-type="code-block-close-marker"],
-    span[data-type="yaml-front-matter-open-marker"],
-    span[data-type="yaml-front-matter-close-marker"],
-    span[data-type="math-block-open-marker"],
-    span[data-type="math-block-close-marker"] {
+    span[data-type='code-block-open-marker'],
+    span[data-type='code-block-close-marker'],
+    span[data-type='yaml-front-matter-open-marker'],
+    span[data-type='yaml-front-matter-close-marker'],
+    span[data-type='math-block-open-marker'],
+    span[data-type='math-block-close-marker'] {
       display: none;
     }
   }
@@ -138,7 +138,7 @@
     height: 100%;
     box-sizing: border-box;
 
-    &[contenteditable="false"] {
+    &[contenteditable='false'] {
       opacity: 0.3;
       cursor: not-allowed;
     }
@@ -154,7 +154,7 @@
     }
 
     &:after {
-      content: "";
+      content: '';
       height: var(--editor-bottom);
       display: block;
     }
@@ -189,8 +189,8 @@
   & .vditor-reset > h4:before,
   & .vditor-reset > h5:before,
   & .vditor-reset > h6:before,
-  div[data-type="link-ref-defs-block"]:before,
-  div[data-type="footnotes-block"]:before,
+  div[data-type='link-ref-defs-block']:before,
+  div[data-type='footnotes-block']:before,
   .vditor-toc:before {
     float: left;
     padding-right: 4px;
@@ -221,7 +221,7 @@
     content: 'H6';
   }
 
-  div[data-type="link-ref-defs-block"] {
+  div[data-type='link-ref-defs-block'] {
     &:before {
       content: '"A"';
     }
@@ -229,7 +229,7 @@
     color: var(--blockquote-color);
   }
 
-  div[data-type="footnotes-block"] {
+  div[data-type='footnotes-block'] {
     &:before {
       content: '^F';
     }
@@ -238,20 +238,25 @@
     padding-top: 24px;
     margin-top: 24px;
 
-    & > div[data-type="footnotes-def"] {
-      & > ul, & > ol, & > p, & > blockquote, & > pre, & > table, & > hr {
+    & > div[data-type='footnotes-def'] {
+      & > ul,
+      & > ol,
+      & > p,
+      & > blockquote,
+      & > pre,
+      & > table,
+      & > hr {
         margin-left: 8px;
       }
     }
   }
 
-
   .vditor-toc {
     &:before {
-      content: "ToC";
+      content: 'ToC';
     }
 
-    span[data-type="toc-h"] {
+    span[data-type='toc-h'] {
       color: @blurColor;
       text-decoration: underline;
     }
@@ -266,8 +271,8 @@
     h4:before,
     h5:before,
     h6:before,
-    div[data-type="link-ref-defs-block"]:before,
-    div[data-type="footnotes-block"]:before,
+    div[data-type='link-ref-defs-block']:before,
+    div[data-type='footnotes-block']:before,
     .vditor-toc:before {
       content: none;
     }

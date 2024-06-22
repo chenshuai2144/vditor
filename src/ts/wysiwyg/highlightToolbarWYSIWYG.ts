@@ -708,37 +708,9 @@ export const highlightToolbarWYSIWYG = (vditor: IVditor) => {
     if (headingElement) {
       vditor.wysiwyg.popover.innerHTML = '';
 
-      const inputWrap = document.createElement('span');
-      inputWrap.setAttribute('aria-label', 'ID' + '<' + updateHotkeyTip('⌥Enter') + '>');
-      inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
-      const input = document.createElement('input');
-      inputWrap.appendChild(input);
-      input.className = 'vditor-input';
-      input.setAttribute('placeholder', 'ID' + '<' + updateHotkeyTip('⌥Enter') + '>');
-      input.style.width = '120px';
-      input.value = headingElement.getAttribute('data-id') || '';
-      input.oninput = () => {
-        headingElement.setAttribute('data-id', input.value);
-        if (typeof vditor.options.input === 'function') {
-          vditor.options.input(getMarkdown(vditor));
-        }
-      };
-      input.onkeydown = (event) => {
-        if (event.isComposing) {
-          return;
-        }
-        if (removeBlockElement(vditor, event)) {
-          return;
-        }
-        if (focusToElement(event, range)) {
-          return;
-        }
-      };
-
       genUp(range, headingElement, vditor);
       genDown(range, headingElement, vditor);
       genClose(headingElement, vditor);
-      vditor.wysiwyg.popover.insertAdjacentElement('beforeend', inputWrap);
       setPopoverPosition(vditor, headingElement);
     }
 
@@ -793,7 +765,7 @@ const setPopoverPosition = (vditor: IVditor, element: HTMLElement) => {
   vditor.wysiwyg.popover.style.left = '0';
   vditor.wysiwyg.popover.style.display = 'block';
   vditor.wysiwyg.popover.style.top =
-    Math.max(-8, targetElement.offsetTop - 28 - vditor.wysiwyg.element.scrollTop) + 'px';
+    Math.max(-8, targetElement.offsetTop - 42 - vditor.wysiwyg.element.scrollTop) + 'px';
   vditor.wysiwyg.popover.style.left =
     Math.min(
       targetElement.offsetLeft,

@@ -461,7 +461,7 @@ export const highlightToolbarWYSIWYG = (vditor: IVditor) => {
 
       const inputWrap = document.createElement('span');
       inputWrap.setAttribute('aria-label', window.VditorI18n.row);
-      inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+      inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
       const input = document.createElement('input');
       inputWrap.appendChild(input);
       input.type = 'number';
@@ -494,7 +494,7 @@ export const highlightToolbarWYSIWYG = (vditor: IVditor) => {
 
       const input2Wrap = document.createElement('span');
       input2Wrap.setAttribute('aria-label', window.VditorI18n.column);
-      input2Wrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+      input2Wrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
       const input2 = document.createElement('input');
       input2Wrap.appendChild(input2);
       input2.type = 'number';
@@ -561,7 +561,7 @@ export const highlightToolbarWYSIWYG = (vditor: IVditor) => {
         'aria-label',
         window.VditorI18n.footnoteRef + '<' + updateHotkeyTip('⌥Enter') + '>',
       );
-      inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+      inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
       const input = document.createElement('input');
       inputWrap.appendChild(input);
       input.className = 'vditor-input';
@@ -625,7 +625,7 @@ export const highlightToolbarWYSIWYG = (vditor: IVditor) => {
           'aria-label',
           window.VditorI18n.language + '<' + updateHotkeyTip('⌥Enter') + '>',
         );
-        languageWrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+        languageWrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
         const language = document.createElement('input');
         languageWrap.appendChild(language);
 
@@ -710,7 +710,7 @@ export const highlightToolbarWYSIWYG = (vditor: IVditor) => {
 
       const inputWrap = document.createElement('span');
       inputWrap.setAttribute('aria-label', 'ID' + '<' + updateHotkeyTip('⌥Enter') + '>');
-      inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+      inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
       const input = document.createElement('input');
       inputWrap.appendChild(input);
       input.className = 'vditor-input';
@@ -793,7 +793,7 @@ const setPopoverPosition = (vditor: IVditor, element: HTMLElement) => {
   vditor.wysiwyg.popover.style.left = '0';
   vditor.wysiwyg.popover.style.display = 'block';
   vditor.wysiwyg.popover.style.top =
-    Math.max(-8, targetElement.offsetTop - 21 - vditor.wysiwyg.element.scrollTop) + 'px';
+    Math.max(-8, targetElement.offsetTop - 28 - vditor.wysiwyg.element.scrollTop) + 'px';
   vditor.wysiwyg.popover.style.left =
     Math.min(
       targetElement.offsetLeft,
@@ -827,7 +827,7 @@ export const genLinkRefPopover = (
 
   const inputWrap = document.createElement('span');
   inputWrap.setAttribute('aria-label', window.VditorI18n.textIsNotEmpty);
-  inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+  inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg ';
   const input = document.createElement('input');
   inputWrap.appendChild(input);
   input.className = 'vditor-input';
@@ -849,7 +849,7 @@ export const genLinkRefPopover = (
 
   const input1Wrap = document.createElement('span');
   input1Wrap.setAttribute('aria-label', window.VditorI18n.linkRef);
-  input1Wrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+  input1Wrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg ';
   const input1 = document.createElement('input');
   input1Wrap.appendChild(input1);
   input1.className = 'vditor-input';
@@ -887,7 +887,8 @@ const genUp = (range: Range, element: HTMLElement, vditor: IVditor) => {
   upElement.setAttribute('data-type', 'up');
   upElement.setAttribute('aria-label', window.VditorI18n.up + '<' + updateHotkeyTip('⇧⌘U') + '>');
   upElement.innerHTML = '<svg><use xlink:href="#vditor-icon-up"></use></svg>';
-  upElement.className = 'vditor-icon vditor-tooltipped vditor-tooltipped__n';
+  upElement.className =
+    'vditor-icon vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
   upElement.onclick = () => {
     range.insertNode(document.createElement('wbr'));
     previousElement.insertAdjacentElement('beforebegin', element);
@@ -915,7 +916,8 @@ const genDown = (range: Range, element: HTMLElement, vditor: IVditor) => {
     window.VditorI18n.down + '<' + updateHotkeyTip('⇧⌘D') + '>',
   );
   downElement.innerHTML = '<svg><use xlink:href="#vditor-icon-down"></use></svg>';
-  downElement.className = 'vditor-icon vditor-tooltipped vditor-tooltipped__n';
+  downElement.className =
+    'vditor-icon vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
   downElement.onclick = () => {
     range.insertNode(document.createElement('wbr'));
     nextElement.insertAdjacentElement('afterend', element);
@@ -933,7 +935,7 @@ const genClose = (element: HTMLElement, vditor: IVditor) => {
   close.setAttribute('data-type', 'remove');
   close.setAttribute('aria-label', window.VditorI18n.remove + '<' + updateHotkeyTip('⇧⌘X') + '>');
   close.innerHTML = '<svg><use xlink:href="#vditor-icon-trashcan"></use></svg>';
-  close.className = 'vditor-icon vditor-tooltipped vditor-tooltipped__n';
+  close.className = 'vditor-icon vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
   close.onclick = () => {
     const range = getEditorRange(vditor);
     range.setStartAfter(element);
@@ -991,7 +993,7 @@ export const genAPopover = (vditor: IVditor, aElement: HTMLElement, range: Range
   });
   const inputWrap = document.createElement('span');
   inputWrap.setAttribute('aria-label', window.VditorI18n.textIsNotEmpty);
-  inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+  inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
   const input = document.createElement('input');
   inputWrap.appendChild(input);
   input.className = 'vditor-input';
@@ -1013,7 +1015,7 @@ export const genAPopover = (vditor: IVditor, aElement: HTMLElement, range: Range
 
   const input1Wrap = document.createElement('span');
   input1Wrap.setAttribute('aria-label', window.VditorI18n.link);
-  input1Wrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+  input1Wrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
   const input1 = document.createElement('input');
   input1Wrap.appendChild(input1);
   input1.className = 'vditor-input';
@@ -1034,7 +1036,7 @@ export const genAPopover = (vditor: IVditor, aElement: HTMLElement, range: Range
 
   const input2Wrap = document.createElement('span');
   input2Wrap.setAttribute('aria-label', window.VditorI18n.tooltipText);
-  input2Wrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+  input2Wrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
   const input2 = document.createElement('input');
   input2Wrap.appendChild(input2);
   input2.className = 'vditor-input';
@@ -1075,7 +1077,7 @@ export const genImagePopover = (event: Event, vditor: IVditor) => {
 
   const inputWrap = document.createElement('span');
   inputWrap.setAttribute('aria-label', window.VditorI18n.imageURL);
-  inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+  inputWrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
   const inputElement = document.createElement('input');
   inputWrap.appendChild(inputElement);
   inputElement.className = 'vditor-input';
@@ -1090,7 +1092,7 @@ export const genImagePopover = (event: Event, vditor: IVditor) => {
 
   const altWrap = document.createElement('span');
   altWrap.setAttribute('aria-label', window.VditorI18n.alternateText);
-  altWrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+  altWrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
   const alt = document.createElement('input');
   altWrap.appendChild(alt);
   alt.className = 'vditor-input';
@@ -1106,7 +1108,7 @@ export const genImagePopover = (event: Event, vditor: IVditor) => {
 
   const titleWrap = document.createElement('span');
   titleWrap.setAttribute('aria-label', window.VditorI18n.title);
-  titleWrap.className = 'vditor-tooltipped vditor-tooltipped__n';
+  titleWrap.className = 'vditor-tooltipped vditor-tooltipped__n vditor-tooltipped_wysiwyg';
   const title = document.createElement('input');
   titleWrap.appendChild(title);
   title.className = 'vditor-input';

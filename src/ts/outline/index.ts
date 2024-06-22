@@ -9,8 +9,7 @@ export class Outline {
   constructor(outlineLabel: string) {
     this.element = document.createElement('div');
     this.element.className = 'vditor-outline';
-    this.element.innerHTML = `<div class="vditor-outline__title">${outlineLabel}</div>
-<div class="vditor-outline__content"></div>`;
+    this.element.innerHTML = `<div class="vditor-outline__content"></div>`;
   }
 
   public render(vditor: IVditor) {

@@ -1,9 +1,16 @@
 .vditor {
   &-toolbar {
-    background-color: var(--toolbar-background-color);
-    border-bottom: 1px solid var(--border-color);
     padding: 0 5px;
     line-height: 1;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 4px 0px;
+
+    > * {
+      box-sizing: border-box;
+    }
 
     &--pin {
       position: sticky;
@@ -24,16 +31,30 @@
     }
 
     &__item {
-      float: left;
       position: relative;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      justify-content: center;
+      border-radius: var(--toolbar-icon-radius);
+
+      &:hover {
+        background-color: var(--toolbar-icon-hover-bg);
+      }
+      .vditor-tooltipped_wysiwyg {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
 
       .vditor-tooltipped {
         color: var(--toolbar-icon-color);
         border: 0;
-        padding: 10px 5px;
         background-color: transparent;
         height: var(--toolbar-height);
-        width: 25px;
+        width: 15px;
         box-sizing: border-box;
         font-size: 0;
 
@@ -55,6 +76,10 @@
         width: 15px;
         height: 15px;
       }
+      button {
+        padding: 0;
+        cursor: pointer;
+      }
 
       input {
         position: absolute;
@@ -69,10 +94,9 @@
     }
 
     &__divider {
-      float: left;
-      height: calc(var(--toolbar-height) - (var(--toolbar-divider-margin-top) * 2));
-      border-left: 1px solid var(--second-color);
-      margin: var(--toolbar-divider-margin-top) 8px;
+      height: calc(100% - 8px);
+      border-left: 1px solid #eee;
+      margin: '0 4px';
     }
 
     &__br {

@@ -42,7 +42,16 @@
       gap: 8px;
       max-width: none;
       white-space: nowrap;
-      opacity: 0.86;
+    }
+
+    .vditor-icon {
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background-color: var(--toolbar-icon-hover-bg);
+      }
     }
 
     &--arrow:before {

@@ -763,7 +763,7 @@ const setPopoverPosition = (vditor: IVditor, element: HTMLElement) => {
     targetElement = tableElement;
   }
   vditor.wysiwyg.popover.style.left = '0';
-  vditor.wysiwyg.popover.style.display = 'block';
+  vditor.wysiwyg.popover.style.display = 'flex';
   vditor.wysiwyg.popover.style.top =
     Math.max(-8, targetElement.offsetTop - 42 - vditor.wysiwyg.element.scrollTop) + 'px';
   vditor.wysiwyg.popover.style.left =

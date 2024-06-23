@@ -3,7 +3,6 @@ import { Both } from './Both';
 import { Br } from './Br';
 import { CodeTheme } from './CodeTheme';
 import { ContentTheme } from './ContentTheme';
-import { Counter } from './Counter';
 import { Custom } from './Custom';
 import { Devtools } from './Devtools';
 import { Divider } from './Divider';
@@ -61,11 +60,6 @@ export class Toolbar {
     }
     if (vditor.options.toolbarConfig.pin) {
       this.element.classList.add('vditor-toolbar--pin');
-    }
-
-    if (vditor.options.counter.enable) {
-      vditor.counter = new Counter(vditor);
-      this.element.appendChild(vditor.counter.element);
     }
   }
 

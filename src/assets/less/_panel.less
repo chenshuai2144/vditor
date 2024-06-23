@@ -16,6 +16,20 @@
   }
 }
 
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
 .vditor {
   &-panel {
     background-color: var(--panel-background-color);
@@ -39,6 +53,7 @@
       animation: none;
       min-width: auto;
       display: flex;
+      animation: fadeInUp cubic-bezier(0.2, 0, 0.13, 1.5) 0.1s;
       gap: 8px;
       max-width: none;
       white-space: nowrap;

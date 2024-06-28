@@ -178,31 +178,18 @@ export const highlightToolbarWYSIWYG = (vditor: IVditor) => {
     // toc popover
     const tocElement = hasClosestByClassName(typeElement, 'vditor-toc') as HTMLElement;
     if (tocElement) {
-      vditor.wysiwyg.popover.innerHTML = '';
-      genClose(tocElement, vditor);
-      setPopoverPosition(vditor, tocElement);
       return;
     }
 
     // quote popover
     const blockquoteElement = hasClosestByTag(typeElement, 'BLOCKQUOTE') as HTMLTableElement;
     if (blockquoteElement) {
-      vditor.wysiwyg.popover.innerHTML = '';
-      genUp(range, blockquoteElement, vditor);
-      genDown(range, blockquoteElement, vditor);
-      genClose(blockquoteElement, vditor);
-      setPopoverPosition(vditor, blockquoteElement);
+      return;
     }
 
     // list item popover
     if (liElement) {
-      vditor.wysiwyg.popover.innerHTML = '';
-
-      genUp(range, liElement, vditor);
-      genDown(range, liElement, vditor);
-      genClose(liElement, vditor);
-
-      setPopoverPosition(vditor, liElement);
+      return;
     }
 
     // table popover
@@ -707,11 +694,7 @@ export const highlightToolbarWYSIWYG = (vditor: IVditor) => {
     }
     if (headingElement) {
       vditor.wysiwyg.popover.innerHTML = '';
-
-      genUp(range, headingElement, vditor);
-      genDown(range, headingElement, vditor);
-      genClose(headingElement, vditor);
-      setPopoverPosition(vditor, headingElement);
+      return;
     }
 
     // a popover
@@ -732,12 +715,7 @@ export const highlightToolbarWYSIWYG = (vditor: IVditor) => {
     ) {
       const blockElement = hasClosestByAttribute(typeElement, 'data-block', '0');
       if (blockElement && blockElement.parentElement.isEqualNode(vditor.wysiwyg.element)) {
-        vditor.wysiwyg.popover.innerHTML = '';
-        genUp(range, blockElement, vditor);
-        genDown(range, blockElement, vditor);
-        genClose(blockElement, vditor);
-
-        setPopoverPosition(vditor, blockElement);
+        return;
       } else {
         vditor.wysiwyg.popover.style.display = 'none';
       }

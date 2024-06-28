@@ -1,12 +1,16 @@
 .vditor {
   &-toolbar {
+    background: rgba(0, 0, 0, 0.02);
     padding: 0 5px;
     line-height: 1;
+    z-index: 999;
     display: flex;
-    gap: 4px;
+    gap: 16px;
+    backdrop-filter: blur(10px);
+    height: 42px;
     align-items: center;
     box-sizing: border-box;
-    padding: 4px 0px;
+    padding: 12px 0px;
 
     > * {
       box-sizing: border-box;
